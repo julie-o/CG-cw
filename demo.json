@@ -1,0 +1,105 @@
+{
+"nbounces":5,
+"camera":{
+    "type":"pinhole",
+    "width":800,
+    "height":800,
+    "fov":35,
+    "position": [0.0, -3.5, 2.0],
+    "lookat": [0.0, 4.5, -2.1],
+    "up": [0.0, 0.0, 0.2]
+},
+"scene":{
+    "backgroundcolor":[0.01, 0.01, 0.01],
+    "lightsources": [
+    {
+        "type": "arealight",
+        "v0": [0.3, 1.5, 2.5],
+        "v1": [0.3, 1.5, 1.0],
+        "v2": [1.2, 2.5, 1.0],
+        "v3": [1.2, 2.5, 2.5],
+        "samples":20,
+        "method":"jittered",
+        "is": [100.0, 100.0, 100.0],
+        "id": [100.0, 100.0, 100.0]
+    }
+    ],
+    "shapes":[
+    {
+        "id":"block",
+        "type":"trimesh",
+        "vertices":[[-0.25,4.25,0],[0.0,3.25,0],[-1.0,3,0],[-1.25,4,0],[-0.25,4.25,0.5],[0.0,3.25,0.5],[-1.0,3,0.5],[-1.25,4,0.5]],
+        "faces":[[2,1,0],[0,3,2],[6,5,4],[4,7,6],[2,1,5],[5,6,2],[3,2,6],[6,7,3],[4,7,3],[3,0,4],[1,0,4],[4,5,1]],
+        "material":{
+            "ks":0.5,
+            "kd":0.8,
+            "specularexponent":3,
+            "diffusecolor":[1, 1, 1],
+            "tPath": "../textures/space.jpg",
+            "tWidth": 600,
+            "tHeight": 490
+        }
+    },
+    {
+        "id":"pyramid",
+        "type":"trimesh",
+        "vertices":[[0.75,3.25,0],[1.0,2.25,0],[0.0,2,0],[-0.25,3,0],[0.425,2.625,0.7]],
+        "faces":[[0,1,4],[1,2,4],[2,3,4],[0,3,4],[0,1,2],[0,2,3]],
+        "material":{
+            "ks":0,
+            "kd":0,
+            "kr":0.1,
+            "kt":0.8,
+            "eta":1.5,
+            "specularexponent":3,
+            "diffusecolor":[0.5, 0.5, 0.5]
+        }
+    },
+    {
+        "id": "sphere",
+        "type":"sphere",
+        "center": [0.6, 3.6, 0.5],
+        "radius":0.5,
+        "material":{
+            "ks": 0.5,
+            "kd": 0.1,
+            "kr":0.9,
+            "specularexponent":10,
+            "diffusecolor":[0.23,0.67,0.62]
+        }
+    },
+    {
+        "id": "wall",
+        "type": "plane",
+        "v1": [-5.0, 7.0, 0.0],
+        "v2": [-5.0, 7.0, 5.0],
+        "v3": [5.0, 7.0, 5.0],
+        "v0": [5.0, 7.0, 0.0],
+        "material":{
+            "ks": 0.6,
+            "kd": 0.7,
+            "kr": 0.2,
+            "specularexponent": 10,
+            "diffusecolor": [1.0, 1.0, 1.0]
+        }
+    },
+    {
+        "id": "floor",
+        "type": "plane",
+        "v3": [-5.0, 0.0, 0.0],
+        "v0": [-5.0, 7.0, 0.0],
+        "v1": [5.0, 7.0, 0.0],
+        "v2": [5.0, 0.0, 0.0],
+        "material": {
+            "ks": 0.6,
+            "kd": 0.7,
+            "specularexponent": 3,
+            "diffusecolor": [1.0, 1.0, 1.0],
+            "tPath": "../textures/pink.png",
+            "tWidth": 600,
+            "tHeight": 490
+        }
+    }
+    ]
+}
+}
